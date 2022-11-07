@@ -35,5 +35,10 @@
     "react/no-unknown-property": "off",
     "react/no-unescaped-entities ": "off",
     "react/jsx-no-target-blank": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
   }
 }
