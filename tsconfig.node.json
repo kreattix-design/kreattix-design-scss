@@ -6,6 +6,6 @@
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true
   },
-  "include": ["dist", "node_modules", "example"],
-  "exclude": ["dist", "node_modules"]
+  "include": ["vite.config.ts"],
+  "exclude": ["dist", "node_modules", "example"]
 }
