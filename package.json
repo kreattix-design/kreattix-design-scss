@@ -1,5 +1,5 @@
 {
-  "name": "kreattix-design-icons",
+  "name": "kreattix-library-base",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -16,7 +16,7 @@
   "module": "./dist/index.es.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "dev": "vite",
+    "start": "tsc && vite build --watch",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",

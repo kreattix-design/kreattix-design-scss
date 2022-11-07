@@ -4,12 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "start": "vite",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
-    "kreattix-design-icons": "file:..",
+    "kreattix-library-base": "file:..",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
