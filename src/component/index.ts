@@ -1,2 +1,2 @@
-export type { IHelloWorld } from './HelloWorld'
-export { Helloworld } from './HelloWorld'
+export * from './HelloWorld'
+export { default as Helloworld } from './HelloWorld'
