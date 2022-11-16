@@ -1,14 +1,20 @@
+@mixin generate-properties($properties, $value) {
+  @each $property in $properties {
+    #{$property}: $value;
+  }
+}
+
 @mixin generate-utility($utilities) {
   @each $key, $utility in $utilities {
     $values: map-get($utility, values);
     $class: map-get($utility, class);
     $properties: map-get($utility, properties);
-
     @each $infixCls, $value in $values {
+      @if $value == null {
+        $value: $infixCls;
+      }
       .#{$class}-#{$infixCls} {
-        @each $property in $properties {
-          #{$property}: $value;
-        }
+        @include generate-properties($properties, $value);
       }
     }
   }

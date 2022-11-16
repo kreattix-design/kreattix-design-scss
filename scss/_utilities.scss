@@ -3,13 +3,33 @@ $utilities: map-merge(
   (
     'background-color': (
       'properties': background-color,
-      'class': 'bg',
+      'class': bg,
       'values': $utility-bg-colors,
     ),
     'text-color': (
       'properties': color,
-      'class': 'text',
+      'class': text,
       'values': $utility-text-colors,
+    ),
+    'opacity': (
+      properties: opacity,
+      class: opacity,
+      values: $utilities-opacity,
+    ),
+    'overflow': (
+      properties: overflow,
+      class: overflow,
+      values: $utilities-overflow,
+    ),
+    'overflow-x': (
+      properties: overflow-x,
+      class: overflow-x,
+      values: $utilities-overflow,
+    ),
+    'overflow-y': (
+      properties: overflow-y,
+      class: overflow-y,
+      values: $utilities-overflow,
     ),
   ),
   $utilities

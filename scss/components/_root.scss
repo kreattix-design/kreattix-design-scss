@@ -1,0 +1,8 @@
+:root {
+  @each $name, $color in $theme-colors {
+    #{getVarName($name)}: #{$color};
+  }
+  @each $name, $color in $all-colors {
+    #{getVarName($name)}: #{$color};
+  }
+}

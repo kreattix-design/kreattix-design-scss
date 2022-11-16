@@ -1,0 +1,21 @@
+$prefix: kd- !default;
+
+$primary: $blue !default;
+$secondary: $gray !default;
+$success: $green !default;
+$danger: $red !default;
+$warning: $amber !default;
+$info: $cyan !default;
+$light: $gray-50 !default;
+$dark: $gray-800 !default;
+
+$theme-colors: (
+  'primary': $primary,
+  'secondary': $secondary,
+  'success': $success,
+  'info': $info,
+  'warning': $warning,
+  'danger': $danger,
+  'light': $light,
+  'dark': $dark,
+) !default;

@@ -5,3 +5,22 @@
   }
   @return $collection;
 }
+
+@function getVarName($varName) {
+  @return --#{$prefix}#{$varName};
+}
+
+@function getVar($varName) {
+  @return var(--#{$prefix}#{$varName});
+}
+
+@function getThemeColors($theme-colors) {
+  $new-theme-colors: ();
+  @each $variant in map-keys($theme-colors) {
+    $new-theme-colors: map-merge(
+      $new-theme-colors,
+      (#{$variant}: getVar(#{$variant}))
+    );
+  }
+  @return $new-theme-colors;
+}
