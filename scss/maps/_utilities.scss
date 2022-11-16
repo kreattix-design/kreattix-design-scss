@@ -1,0 +1,31 @@
+$utility-colors: map-collect(
+  $gray-colors,
+  $blueGray-colors,
+  $brown-colors,
+  $red-colors,
+  $deepOrange-colors,
+  $orange-colors,
+  $amber-colors,
+  $yellow-colors,
+  $lime-colors,
+  $lightGreen-colors,
+  $green-colors,
+  $teal-colors,
+  $cyan-colors,
+  $lightBlue-colors,
+  $blue-colors,
+  $indigo-colors,
+  $deepPurple-colors,
+  $purple-colors,
+  $pink-colors
+) !default;
+
+$extra-utility-colors: (
+  'white': $white,
+  'black': $black,
+  'light': $light,
+  'dark': $dark,
+) !default;
+
+$utility-bg-colors: map-collect($utility-colors, $extra-utility-colors) !default;
+$utility-text-colors: map-collect($utility-colors, $extra-utility-colors) !default;

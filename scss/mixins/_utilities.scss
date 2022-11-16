@@ -1,0 +1,15 @@
+@mixin generate-utility($utilities) {
+  @each $key, $utility in $utilities {
+    $values: map-get($utility, values);
+    $class: map-get($utility, class);
+    $properties: map-get($utility, properties);
+
+    @each $infixCls, $value in $values {
+      .#{$class}-#{$infixCls} {
+        @each $property in $properties {
+          #{$property}: $value;
+        }
+      }
+    }
+  }
+}

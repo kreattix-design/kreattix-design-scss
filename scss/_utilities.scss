@@ -1,0 +1,18 @@
+$utilities: () !default;
+$utilities: map-merge(
+  (
+    'background-color': (
+      'properties': background-color,
+      'class': 'bg',
+      'values': $utility-bg-colors,
+    ),
+    'text-color': (
+      'properties': color,
+      'class': 'text',
+      'values': $utility-text-colors,
+    ),
+  ),
+  $utilities
+);
+
+@include generate-utility($utilities);
