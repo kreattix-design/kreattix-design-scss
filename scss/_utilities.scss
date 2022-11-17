@@ -31,6 +31,81 @@ $utilities: map-merge(
       class: overflow-y,
       values: $utilities-overflow,
     ),
+    'font-family': (
+      properties: font-family,
+      class: font,
+      values: (
+        monospace: getVar(font-monospace),
+      ),
+    ),
+    'font-size': (
+      rfs: true,
+      properties: font-size,
+      class: fs,
+      values: $font-sizes,
+    ),
+    'font-style': (
+      properties: font-style,
+      class: fst,
+      values: italic normal,
+    ),
+    'font-weight': (
+      properties: font-weight,
+      class: fw,
+      values: (
+        light: $font-weight-light,
+        lighter: $font-weight-lighter,
+        normal: $font-weight-normal,
+        bold: $font-weight-bold,
+        semibold: $font-weight-semibold,
+        bolder: $font-weight-bolder,
+      ),
+    ),
+    'line-height': (
+      properties: line-height,
+      class: lh,
+      values: (
+        1: 1,
+        sm: $line-height-sm,
+        base: $line-height,
+        lg: $line-height-lg,
+      ),
+    ),
+    'text-align': (
+      responsive: true,
+      properties: text-align,
+      class: text,
+      values: (
+        start: left,
+        end: right,
+        center: center,
+      ),
+    ),
+    'text-decoration': (
+      properties: text-decoration,
+      class: text-decoration,
+      values: none underline line-through,
+    ),
+    'text-transform': (
+      properties: text-transform,
+      class: text,
+      values: lowercase uppercase capitalize,
+    ),
+    'white-space': (
+      properties: white-space,
+      class: text,
+      values: (
+        wrap: normal,
+        nowrap: nowrap,
+      ),
+    ),
+    'word-wrap': (
+      properties: word-wrap word-break,
+      class: text,
+      values: (
+        break: break-word,
+      ),
+    ),
   ),
   $utilities
 );

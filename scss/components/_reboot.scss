@@ -1,4 +1,5 @@
 * {
+  box-sizing: border-box;
   &::-moz-selection {
     color: $light;
     background: rgba(getVar('primary-rgb'), 1);

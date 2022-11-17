@@ -1,6 +1,10 @@
-@mixin generate-properties($properties, $value) {
+@mixin generate-properties($properties, $value, $rfs) {
   @each $property in $properties {
-    #{$property}: $value;
+    @if $rfs {
+      @include rfs($value, $property);
+    } @else {
+      #{$property}: $value;
+    }
   }
 }
 
@@ -9,12 +13,26 @@
     $values: map-get($utility, values);
     $class: map-get($utility, class);
     $properties: map-get($utility, properties);
+    $rfs: map-get($utility, rfs);
+    $responsive: map-get($utility, responsive);
+
     @each $infixCls, $value in $values {
       @if $value == null {
         $value: $infixCls;
       }
-      .#{$class}-#{$infixCls} {
-        @include generate-properties($properties, $value);
+      @if $responsive {
+        @each $breakpoint in map-keys($grid-breakpoints) {
+          $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+          @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+            .#{$class}-#{$infixCls}#{$infix} {
+              @include generate-properties($properties, $value, $rfs);
+            }
+          }
+        }
+      } @else {
+        .#{$class}-#{$infixCls} {
+          @include generate-properties($properties, $value, $rfs);
+        }
       }
     }
   }

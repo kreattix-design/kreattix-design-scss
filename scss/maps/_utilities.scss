@@ -9,7 +9,11 @@ $utility-bg-colors: map-collect(
 
 $utility-text-colors: map-collect(
   $utility-colors,
-  $utility-theme-colors
+  $utility-theme-colors,
+  (
+    'muted': $text-muted,
+    'reset': inherit,
+  )
 ) !default;
 
 $utilities-opacity: (
