@@ -1,0 +1,29 @@
+@if $enable-container-classes {
+  .#{$prefix}container,
+  .#{$prefix}container-fluid {
+    @include make-container();
+  }
+}
+
+@each $breakpoint, $container-max-width in $container-max-widths {
+  .#{$prefix}container-#{$breakpoint} {
+    @extend .#{$prefix}container-fluid;
+  }
+  @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+    %responsive-container-#{$breakpoint} {
+      max-width: $container-max-width;
+    }
+
+    $extend-breakpoint: true;
+    @each $name, $width in $grid-breakpoints {
+      @if ($extend-breakpoint) {
+        .#{$prefix}container#{breakpoint-infix($name, $grid-breakpoints)} {
+          @extend %responsive-container-#{$breakpoint};
+        }
+      }
+      @if ($breakpoint == $name) {
+        $extend-breakpoint: false;
+      }
+    }
+  }
+}

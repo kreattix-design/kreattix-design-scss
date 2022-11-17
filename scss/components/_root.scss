@@ -1,8 +1,55 @@
 :root {
+  // colors starts
   @each $name, $color in $theme-colors {
     #{getVarName($name)}: #{$color};
+    #{getVarName($name)}-rgb: #{to-rgb($color)};
   }
-  @each $name, $color in $all-colors {
+  @each $name, $color in $colors {
     #{getVarName($name)}: #{$color};
+    #{getVarName($name)}-rgb: #{to-rgb($color)};
   }
+  #{getVarName('white')}: #{$white};
+  #{getVarName('white-rgb')}: #{to-rgb($white)};
+  #{getVarName('black')}: #{$black};
+  #{getVarName('black-rgb')}: #{to-rgb($black)};
+  // colors ends
+
+  // font starts
+  #{getVarName('font-sans-serif')}: #{$font-sans-serif};
+  #{getVarName('font-monospace')}: #{$font-monospace};
+  #{getVarName('font-family')}: #{$font-family};
+  #{getVarName('font-family-code')}: #{$font-family-code};
+  // font ends
+
+  // body starts
+  #{getVarName('body-font-family')}: #{$font-family};
+  @include rfs($font-size, #{getVarName('body-font-size')});
+  #{getVarName('body-font-weight')}: #{$font-weight};
+  #{getVarName('body-line-height')}: #{$line-height};
+  #{getVarName('body-color')}: #{$body-color};
+  #{getVarName('body-bg')}: #{$body-bg};
+  @if $body-text-align != null {
+    #{getVarName('body-text-align')}: #{$body-text-align};
+  }
+  // body ends
+
+  #{getVarName('border-width')}: #{$border-width};
+  #{getVarName('border-style')}: #{$border-style};
+  #{getVarName('border-color')}: #{$border-color};
+
+  #{getVarName('border-radius')}: #{$border-radius};
+  #{getVarName('border-radius-sm')}: #{$border-radius-sm};
+  #{getVarName('border-radius-lg')}: #{$border-radius-lg};
+  #{getVarName('border-radius-xl')}: #{$border-radius-xl};
+  #{getVarName('border-radius-xxl')}: #{$border-radius-xxl};
+  #{getVarName('border-radius-pill')}: #{$border-radius-pill};
+
+  #{getVarName('border-shadow-color')}: #{$black};
+
+  #{getVarName(link-color)}: #{$link-color};
+  #{getVarName(link-hover-color)}: #{$link-hover-color};
+
+  #{getVarName(code-color)}: #{$code-color};
+
+  #{getVarName('highlight-bg')}: #{$mark-bg};
 }

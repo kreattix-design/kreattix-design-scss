@@ -11,7 +11,7 @@ const compileScss = () => {
     .pipe(GulpSass())
     .on('error', GulpUtil.log.bind(GulpUtil, 'Sass Error'))
     .pipe(GulpSourceMaps.write())
-    .pipe(GulpClient.dest('./dist/css/'))
+    .pipe(GulpClient.dest('./css/'))
     .pipe(
       GulpRename(function (file) {
         file.basename = file.basename + '.min'
@@ -19,7 +19,7 @@ const compileScss = () => {
     )
     .pipe(GulpCleanCss())
     .pipe(GulpSourceMaps.write())
-    .pipe(GulpClient.dest('./dist/css/'))
+    .pipe(GulpClient.dest('./css/'))
 }
 
 const watchScss = () => {

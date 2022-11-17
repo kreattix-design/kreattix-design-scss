@@ -1,3 +1,5 @@
+@import '../node_modules/rfs/scss';
+
 @function map-collect($maps...) {
   $collection: ();
   @each $map in $maps {
@@ -23,4 +25,8 @@
     );
   }
   @return $new-theme-colors;
+}
+
+@function to-rgb($color) {
+  @return red($color), green($color), blue($color);
 }

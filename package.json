@@ -28,6 +28,11 @@
     "sass": "^1.56.1"
   },
   "dependencies": {
-    "prettier": "^2.7.1"
-  }
+    "prettier": "^2.7.1",
+    "rfs": "^9.0.6"
+  },
+  "files": [
+    "css",
+    "scss"
+  ]
 }
